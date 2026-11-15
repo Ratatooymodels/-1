@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Розумна Хатинка — канцтовари та копі-центр, Київ</title>
+<meta name="description" content="Магазин канцтоварів та копі-центр «Розумна Хатинка» на Голосіївському проспекті, 30-А, Київ. Друк, ксерокопія, ламінування, канцелярія для школи й офісу.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+:root{
+  --bg:#fffdf6; --card:#fff; --ink:#1c2540; --muted:#5b6479;
+  --blue:#1d3f7a; --blue-d:#142c57; --yellow:#f5b800; --yellow-l:#fff1bd;
+  --green:#1f8f6b; --line:#e8e3d3;
+  --r:22px; --sh:0 8px 28px rgba(29,63,122,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+h1,h2,h3{line-height:1.2;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;color:var(--blue-d);margin-bottom:12px}
+.lead{color:var(--muted);max-width:620px;margin-bottom:40px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:.95rem;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;font-family:inherit}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(29,63,122,.22)}
+.btn-primary{background:var(--yellow);color:var(--blue-d)}
+.btn-primary:hover{background:#ffc928}
+.btn-ghost{border-color:var(--blue);color:var(--blue);background:transparent}
+.btn-ghost:hover{background:var(--blue);color:#fff}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-sm{padding:10px 20px;font-size:.88rem}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;flex-direction:column;line-height:1.15}
+.logo b{font-size:1.2rem;font-weight:800;color:var(--blue-d)}
+.logo small{font-size:.7rem;color:var(--muted);font-weight:500}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{font-weight:600;font-size:.92rem;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
+nav a:hover{border-color:var(--yellow);color:var(--blue)}
+.burger{display:none;width:44px;height:44px;border:0;background:var(--yellow-l);border-radius:12px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{display:block;width:20px;height:2.5px;background:var(--blue-d);border-radius:2px;transition:.25s}
+.burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* hero: зошит у клітинку/лінійку */
+.hero{padding:70px 0 90px;background:
+  linear-gradient(transparent 31px,rgba(29,63,122,.09) 32px) 0 0/100% 32px,
+  linear-gradient(90deg,transparent 78px,rgba(224,70,70,.35) 79px,transparent 81px),
+  var(--bg);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.badge{display:inline-block;background:var(--yellow-l);color:var(--blue-d);font-weight:700;font-size:.85rem;padding:8px 16px;border-radius:999px;margin-bottom:22px}
+.hero h1{font-size:clamp(2rem,4.6vw,3.3rem);font-weight:800;color:var(--blue-d);margin-bottom:20px}
+.hero p{font-size:1.08rem;color:var(--muted);max-width:540px;margin-bottom:32px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.desk{position:relative;height:380px}
+.desk .sheet,.desk .tag{position:absolute;border-radius:18px;box-shadow:var(--sh)}
+.sheet.a{inset:20px 40px 30px 30px;background:var(--blue);transform:rotate(-4deg)}
+.sheet.b{inset:40px 20px 10px 50px;background:#fff;transform:rotate(3deg);padding:28px;border:1px solid var(--line)}
+.sheet.b i{display:block;height:10px;border-radius:6px;background:var(--line);margin-bottom:14px}
+.sheet.b i:nth-child(2){width:80%}.sheet.b i:nth-child(3){width:60%}.sheet.b i:nth-child(4){width:90%;background:var(--yellow)}
+.sheet.b span{position:absolute;right:22px;bottom:16px;font-size:3.2rem}
+.tag{background:var(--yellow);color:var(--blue-d);font-weight:800;padding:12px 18px;font-size:.95rem}
+.tag.t1{top:0;right:6px;transform:rotate(6deg)}
+.tag.t2{bottom:0;left:0;background:var(--green);color:#fff;transform:rotate(-5deg)}
+
+/* cards */
+.grid{display:grid;gap:22px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--sh);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(29,63,122,.16)}
+.ico{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;font-size:1.8rem;margin-bottom:18px;background:var(--yellow-l)}
+.card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--blue-d)}
+.card p{font-size:.93rem;color:var(--muted)}
+.adv .ico{background:var(--blue);filter:none}
+.cat:nth-child(3n+2) .ico{background:#d9efe7}
+.cat:nth-child(3n) .ico{background:#dde6f6}
+
+/* copy centre */
+.copy{background:linear-gradient(135deg,var(--blue-d),var(--blue));color:#fff}
+.copy h2{color:#fff}.copy .lead{color:#c9d5ee}
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:36px}
+.svc li{list-style:none;display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:18px 20px;transition:background .2s,transform .2s}
+.svc li:hover{background:rgba(255,255,255,.16);transform:translateX(4px)}
+.svc .e{font-size:1.7rem}
+.svc b{display:block;font-weight:700}
+.svc small{color:#c9d5ee;font-size:.82rem}
+.note{margin-top:14px;font-size:.85rem;color:#c9d5ee}
+
+/* contacts */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:stretch}
+.info{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;box-shadow:var(--sh)}
+.info h3{font-size:1.2rem;margin-bottom:20px;color:var(--blue-d)}
+.row{display:flex;gap:14px;margin-bottom:18px}
+.row .e{font-size:1.4rem}
+.row small{display:block;color:var(--muted);font-size:.8rem;font-weight:600}
+.row a.tel{font-weight:800;font-size:1.15rem;color:var(--blue)}
+.row a.tel:hover{text-decoration:underline}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh);min-height:380px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+
+footer{background:var(--blue-d);color:#c9d5ee;padding:44px 0 28px;font-size:.9rem}
+.f-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;margin-bottom:28px}
+footer b{color:#fff;display:block;margin-bottom:8px;font-size:1.05rem}
+footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a:hover{color:var(--yellow)}
+.copyr{border-top:1px solid rgba(255,255,255,.15);padding-top:20px;font-size:.82rem}
+
+
+.cat{cursor:pointer}
+.cat.active{border-color:var(--yellow);box-shadow:0 0 0 3px var(--yellow),0 16px 36px rgba(29,63,122,.16)}
+.menu-panel{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--sh)}
+.mp-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:20px}
+.mp-head h3{font-size:1.3rem;color:var(--blue-d)}
+.mp-head p{color:var(--muted);font-size:.9rem}
+.mp-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 18px}
+.mp-list li{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--bg);border:1px solid var(--line);border-radius:14px;font-size:.92rem;font-weight:500;animation:pop .35s ease both}
+.mp-list li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--yellow);flex:none}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.mp-foot{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--muted);font-size:.9rem}
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,44,87,.55);backdrop-filter:blur(4px)}
+.modal.open{display:flex}
+.modal-box{position:relative;background:#fff;border-radius:26px;padding:36px 30px 30px;max-width:380px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.3);animation:pop .3s ease both}
+.modal-box .big{font-size:2.6rem}
+.modal-box h3{color:var(--blue-d);margin:6px 0 4px}
+.modal-box .num{display:block;font-size:1.7rem;font-weight:800;color:var(--blue);margin:14px 0 4px}
+.modal-box small{display:block;color:var(--muted);margin-bottom:22px}
+.modal-box .btn{width:100%;justify-content:center;margin-bottom:10px}
+.x{position:absolute;top:12px;right:12px;width:38px;height:38px;border:0;border-radius:50%;background:var(--yellow-l);font-size:1.2rem;cursor:pointer;color:var(--blue-d)}
+@media (max-width:980px){.mp-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.mp-list{grid-template-columns:1fr}.menu-panel{padding:22px}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .hero-grid,.contact{grid-template-columns:1fr}
+  .desk{height:300px;max-width:420px}
+}
+@media (max-width:820px){
+  .burger{display:flex}
+  .call-top{display:none}
+  nav{position:absolute;top:72px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s ease}
+  nav.open{max-height:420px;box-shadow:var(--sh)}
+  nav ul{flex-direction:column;gap:0;padding:8px 20px 20px}
+  nav li a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .mob-call{display:inline-flex!important;margin-top:14px}
+}
+.mob-call{display:none}
+@media (max-width:600px){
+  section{padding:60px 0}
+  .g4,.g3,.svc{grid-template-columns:1fr}
+  .hero{padding:44px 0 60px}
+  .btn{width:100%;justify-content:center}
+  .btns .btn{width:auto;flex:1 1 auto}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="logo" aria-label="Розумна Хатинка — на головну">
+      <b>✏ Розумна Хатинка</b><small>канцтовари та копі-центр</small>
+    </a>
+    <nav id="menu" aria-label="Головне меню">
+      <ul>
+        <li><a href="#home">Головна</a></li>
+        <li><a href="#catalog">Асортимент</a></li>
+        <li><a href="#copy">Послуги копі-центру</a></li>
+        <li><a href="#why">Переваги</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+        <li><a class="js-call btn btn-primary btn-sm mob-call" href="tel:+380980893729">📞 Зателефонувати</a></li>
+      </ul>
+    </nav>
+    <a class="js-call btn btn-primary btn-sm call-top" href="tel:+380980893729">📞 Зателефонувати</a>
+    <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="badge">📍 Голосіївський район, Київ</span>
+      <h1>Все для школи, офісу, творчості та швидкого друку поруч із вами</h1>
+      <p>Широкий вибір якісних канцтоварів та оперативні поліграфічні послуги у магазині «Розумна Хатинка» на Голосіївському проспекті.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#catalog">Переглянути послуги та товари</a>
+        <a class="btn btn-ghost" href="#contacts">Як нас знайти</a>
+      </div>
+    </div>
+    <div class="desk reveal" aria-hidden="true">
+      <div class="sheet a"></div>
+      <div class="sheet b"><i></i><i></i><i></i><i></i><span>🖨</span></div>
+      <div class="tag t1">✏ Канцтовари</div>
+      <div class="tag t2">📄 Друк за хвилини</div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <h2 class="reveal">Чому обирають нас</h2>
+    <p class="lead reveal">Заходьте по зошит — виходьте з готовими документами.</p>
+    <div class="grid g4">
+      <article class="card adv reveal"><div class="ico">🏠</div><h3>Усе в одному місці</h3><p>Від ручок і зошитів до термінового роздруку документів та фото.</p></article>
+      <article class="card adv reveal"><div class="ico">⚡</div><h3>Швидкий копі-центр</h3><p>Друк, ксерокопія та ламінування за лічені хвилини без черг.</p></article>
+      <article class="card adv reveal"><div class="ico">💛</div><h3>Доступні ціни</h3><p>Чесна вартість товарів і послуг для школярів, студентів та офісів.</p></article>
+      <article class="card adv reveal"><div class="ico">📍</div><h3>Зручне розташування</h3><p>Знаходимося у зручній локації на Голосіївському проспекті.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="catalog" style="background:#fff8de">
+  <div class="wrap">
+    <h2 class="reveal">Наш асортимент канцтоварів</h2>
+    <p class="lead reveal">Шість категорій, у яких є все — від першого дзвінка до дипломної.</p>
+    <div class="grid g3" role="tablist" aria-label="Категорії товарів">
+      <article class="card cat reveal" role="tab" tabindex="0" data-cat="school" aria-selected="false"><div class="ico">🎒</div><h3>Шкільне приладдя</h3><p>Зошити, щоденники, рюкзаки, пенали.</p></article>
+      <article class="card cat reveal" role="tab" tabindex="0" data-cat="office" aria-selected="false"><div class="ico">🗂</div><h3>Офісні товари</h3><p>Папір А4/А3, папки, файли, степлери, маркери.</p></article>
+      <article class="card cat reveal" role="tab" tabindex="0" data-cat="art" aria-selected="false"><div class="ico">🎨</div><h3>Товари для творчості</h3><p>Фарби, альбоми, пластилін, кольоровий папір, пензлі.</p></article>
+      <article class="card cat reveal" role="tab" tabindex="0" data-cat="write" aria-selected="false"><div class="ico">✏</div><h3>Письмове приладдя</h3><p>Ручки, олівці, лінійки, коректори.</p></article>
+      <article class="card cat reveal" role="tab" tabindex="0" data-cat="gift" aria-selected="false"><div class="ico">🎁</div><h3>Подарункова упаковка та листівки</h3><p>Папір, коробки, стрічки та листівки на будь-яку нагоду.</p></article>
+      <article class="card cat reveal" role="tab" tabindex="0" data-cat="games" aria-selected="false"><div class="ico">🧩</div><h3>Розвиваючі ігри та книги</h3><p>Настільні ігри, пазли та книги для дітей.</p></article>
+    </div>
+
+    <div class="menu-panel reveal" id="menuPanel" role="tabpanel" aria-live="polite">
+      <div class="mp-head"><h3 id="mpTitle"></h3><p id="mpHint">Оберіть категорію, щоб побачити товари.</p></div>
+      <ul class="mp-list" id="mpList"></ul>
+      <div class="mp-foot">Наявність і ціни уточнюйте за телефоном. <button class="btn btn-primary btn-sm js-call" type="button">📞 Зателефонувати</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="copy" id="copy">
+  <div class="wrap">
+    <h2 class="reveal">Послуги копі-центру</h2>
+    <p class="lead reveal">Швидко, акуратно й без черг. Точну вартість підкажемо за телефоном або в месенджері.</p>
+    <ul class="svc reveal">
+      <li><span class="e">🖨</span><div><b>Чорно-білий та кольоровий друк</b><small>формати А4, А3</small></div></li>
+      <li><span class="e">📄</span><div><b>Ксерокопіювання документів</b><small>за лічені хвилини</small></div></li>
+      <li><span class="e">📧</span><div><b>Сканування та відправка</b><small>на пошту або в месенджери</small></div></li>
+      <li><span class="e">🛡</span><div><b>Ламінування документів</b><small>захист від зносу та вологи</small></div></li>
+      <li><span class="e">📘</span><div><b>Брошурування</b><small>на пластикову чи металеву пружину</small></div></li>
+      <li><span class="e">📷</span><div><b>Друк фотографій</b><small>для альбомів, документів, подарунків</small></div></li>
+    </ul>
+    <a class="btn btn-primary" href="#contacts">Уточнити вартість друку</a>
+    <p class="note">Орієнтовні ціни залежать від формату, кількості та типу паперу.</p>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <h2 class="reveal">Контакти та як нас знайти</h2>
+    <p class="lead reveal">Приходьте або телефонуйте — підкажемо, що є в наявності.</p>
+    <div class="contact">
+      <div class="info reveal">
+        <h3>Магазин канцтоварів та копі-центр «Розумна Хатинка»</h3>
+        <div class="row"><span class="e">📍</span><div><small>Адреса</small>м. Київ, Голосіївський проспект, 30-А</div></div>
+        <div class="row"><span class="e">📞</span><div><small>Телефон</small><a class="tel" href="tel:+380980893729">+380 98 089 3729</a></div></div>
+        <div class="row"><span class="e">🕘</span><div><small>Графік роботи</small>Пн–Пт: 09:00–19:00<br>Сб–Нд: 10:00–17:00<br><small style="margin-top:6px;font-weight:500">Графік можна уточнити за телефоном.</small></div></div>
+        <div class="btns">
+          <a class="js-call btn btn-primary btn-sm" href="tel:+380980893729">📞 Зателефонувати</a>
+          <a class="btn btn-blue btn-sm" href="https://t.me/+380980893729" target="_blank" rel="noopener">✈ Telegram</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.google.com/maps/search/?api=1&query=%D0%9A%D0%B8%D1%97%D0%B2%2C+%D0%93%D0%BE%D0%BB%D0%BE%D1%81%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C+30-%D0%90" target="_blank" rel="noopener">🗺 Відкрити в Google Maps</a>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe title="Карта: Голосіївський проспект, 30-А, Київ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=%D0%9A%D0%B8%D1%97%D0%B2%2C+%D0%93%D0%BE%D0%BB%D0%BE%D1%81%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C+30-%D0%90&output=embed&hl=uk"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div><b>✏ Розумна Хатинка</b>Магазин канцтоварів та копі-центр<br>м. Київ, Голосіївський проспект, 30-А<br><a href="tel:+380980893729">+380 98 089 3729</a></div>
+      <ul aria-label="Навігація у підвалі">
+        <li><a href="#home">Головна</a></li><li><a href="#catalog">Асортимент</a></li><li><a href="#copy">Копі-центр</a></li><li><a href="#why">Переваги</a></li><li><a href="#contacts">Контакти</a></li>
+      </ul>
+    </div>
+    <div class="copyr">© 2026 Магазин «Розумна Хатинка», м. Київ</div>
+  </div>
+</footer>
+
+<div class="modal" id="callModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+  <div class="modal-box">
+    <button class="x" type="button" id="cmClose" aria-label="Закрити">✕</button>
+    <div class="big">📞</div>
+    <h3 id="cmTitle">Розумна Хатинка</h3>
+    <span class="num">+380 98 089 3729</span>
+    <small>Пн–Пт: 09:00–19:00, Сб–Нд: 10:00–17:00</small>
+    <a class="btn btn-primary" href="tel:+380980893729">Подзвонити</a>
+    <button class="btn btn-ghost" type="button" id="cmCopy">Скопіювати номер</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('menu');
+  function toggle(o){b.classList.toggle('open',o);m.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}
+  b.addEventListener('click',function(){toggle(!m.classList.contains('open'))});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A')toggle(false)});
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(el,i){el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+  var DATA={
+    school:['🎒 Школа',['Зошити (12, 18, 24, 48, 96 арк.)','Щоденники','Рюкзаки та ранці','Пенали','Папки для зошитів','Обкладинки для книг і зошитів','Підставки та органайзери','Мішки для змінного взуття','Лінійки, транспортири, циркулі']],
+    office:['🗂 Офіс',['Папір А4 та А3','Папки-швидкозшивачі','Файли та папки-регістратори','Степлери та скоби','Маркери та текстовиділювачі','Скріпки, кнопки, кліпси','Блокноти та стікери','Калькулятори','Клейка стрічка та клей']],
+    art:['🎨 Творчість',['Акварельні та гуашеві фарби','Альбоми для малювання','Пластилін і тісто для ліплення','Кольоровий папір і картон','Пензлі та палітри','Фломастери та маркери','Клей, ножиці, декор','Набори для аплікацій','Мольберти та скетчбуки']],
+    write:['✏ Письмо',['Кулькові та гелеві ручки','Олівці прості та кольорові','Лінійки','Коректори','Гумки та стругачки','Лінери та капілярні ручки','Чорнила та стрижні','Маркери для дошки','Набори для письма']],
+    gift:['🎁 Подарунки',['Подарункова упаковка','Пакети та коробки','Стрічки та банти','Листівки','Конверти','Наклейки та декор','Свічки та повітряні кульки']],
+    games:['🧩 Ігри та книги',['Розвиваючі ігри','Пазли','Настільні ігри','Розмальовки','Дитячі книги','Прописи та навчальні зошити','Набори для творчості']]
+  };
+  var tabs=document.querySelectorAll('.cat[data-cat]'),list=document.getElementById('mpList'),title=document.getElementById('mpTitle'),hint=document.getElementById('mpHint');
+  function show(k,scroll){
+    var d=DATA[k];if(!d)return;
+    tabs.forEach(function(t){var on=t.dataset.cat===k;t.classList.toggle('active',on);t.setAttribute('aria-selected',on)});
+    title.textContent=d[0];hint.textContent='У наявності та під замовлення:';
+    list.innerHTML=d[1].map(function(i){return '<li>'+i+'</li>'}).join('');
+    if(scroll)document.getElementById('menuPanel').scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){show(t.dataset.cat,true)});
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(t.dataset.cat,true)}});
+  });
+  show('school',false);
+
+  var modal=document.getElementById('callModal'),lastFocus;
+  function openM(){lastFocus=document.activeElement;modal.classList.add('open');document.getElementById('cmClose').focus()}
+  function closeM(){modal.classList.remove('open');if(lastFocus)lastFocus.focus()}
+  document.querySelectorAll('.js-call').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();toggle(false);openM()})});
+  document.getElementById('cmClose').addEventListener('click',closeM);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeM()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeM()});
+  document.getElementById('cmCopy').addEventListener('click',function(){
+    var b=this,n='+380980893729';
+    function ok(){b.textContent='Скопійовано ✓';setTimeout(function(){b.textContent='Скопіювати номер'},1800)}
+    if(navigator.clipboard){navigator.clipboard.writeText(n).then(ok,ok)}else ok();
+  });
+})();
+</script>
+</body>
+</html>
